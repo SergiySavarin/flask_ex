@@ -9,3 +9,5 @@ class BaseConfig(object):
     SECRET_KEY = 'you-will-never-guess'
     WTF_CSRF_ENABLED = False
     SECURITY_PASSWORD_SALT = 'my_precious_two'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'dev.sqlite')
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
