@@ -13,9 +13,6 @@
     </p>
     <form action="" method="post" name="login">
         {{ form.hidden_tag() }}
-            <p>{{ form.username }}</p>
-            <p>{{ form.password }}</p>
-            <p><input type="submit" value="Sign In"></p>
             {% if form %}
                 {% for field in form %}
                     <p>{{ field }}</p>
