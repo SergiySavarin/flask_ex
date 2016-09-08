@@ -2,6 +2,24 @@
 <html>
 <head>
     <title>{% if title %} {{ title }} - site{% endif %}</title>
+    <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('button').click(function() {
+                $.ajax({
+                    url: '/',
+                    data: $('form').serialize(),
+                    type: 'POST',
+                    success: function(response) {
+                        console.log(response);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <p>
@@ -18,7 +36,8 @@
                     <p>{{ field }}</p>
                 {% endfor %}
             {% endif %}
-            <p><input type="submit" value="Sign In"></p>
+            <!-- <p><input type="submit" value="Sign In"></p> -->
     </form>
+    <button type="submit">Sign In</button>
 </body>
 </html>
